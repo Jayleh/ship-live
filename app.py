@@ -6,8 +6,8 @@ from flask import Flask, render_template, jsonify
 
 
 app = Flask(__name__)
-app.config['API_KEY'] = os.environ['apiKey']
-app.config['API_SECRET'] = os.environ['apiSecret']
+apiKey = os.environ['apiKey']
+apiSecret = os.environ['apiSecret']
 
 
 @app.route("/")
@@ -29,7 +29,7 @@ def awaiting():
 
     full_url = base_url + query_url
 
-    response = requests.get(full_url, auth=(app.config['API_KEY'], app.config['API_SECRET']))
+    response = requests.get(full_url, auth=(apiKey, apiSecret))
 
     data = response.json()
 
@@ -45,7 +45,7 @@ def shipped(date):
 
     full_url = base_url + query_url
 
-    response = requests.get(full_url, auth=(app.config['API_KEY'], app.config['API_SECRET']))
+    response = requests.get(full_url, auth=(apiKey, apiSecret))
 
     data = response.json()
 
