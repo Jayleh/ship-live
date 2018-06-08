@@ -27,7 +27,7 @@ def awaiting():
 
     full_url = base_url + query_url
 
-    response = requests.get(full_url, auth=(apiKey, apiSecret))
+    response = requests.get(full_url, auth=(s3))
 
     data = response.json()
 
