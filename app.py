@@ -1,11 +1,13 @@
 import os
 import requests
 from flask import Flask, render_template, jsonify
-from boto.s3.connection import S3Connection
-s3 = S3Connection(os.environ['apiKey'], os.environ['apiSecret'])
+# from boto.s3.connection import S3Connection
+# s3 = S3Connection(os.environ['apiKey'], os.environ['apiSecret'])
 
 
 app = Flask(__name__)
+app.config['API_KEY'] = os.environ['apiKey']
+app.config['API_SECRET'] = os.environ['apiSecret']
 
 
 @app.route("/")
@@ -27,7 +29,7 @@ def awaiting():
 
     full_url = base_url + query_url
 
-    response = requests.get(full_url, auth=(s3))
+    response = requests.get(full_url, auth=(app.config['API_KEY'], app.config['API_SECRET']))
 
     data = response.json()
 
@@ -43,7 +45,7 @@ def shipped(date):
 
     full_url = base_url + query_url
 
-    response = requests.get(full_url, auth=(s3))
+    response = requests.get(full_url, auth=(app.config['API_KEY'], app.config['API_SECRET']))
 
     data = response.json()
 
