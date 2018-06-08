@@ -1,13 +1,9 @@
-import os
 import requests
 from flask import Flask, render_template, jsonify
-# from boto.s3.connection import S3Connection
-# s3 = S3Connection(os.environ['apiKey'], os.environ['apiSecret'])
+from static.config.config import apiKey, apiSecret
 
 
 app = Flask(__name__)
-apiKey = os.environ['apiKey']
-apiSecret = os.environ['apiSecret']
 
 
 @app.route("/")
