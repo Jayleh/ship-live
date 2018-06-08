@@ -1,6 +1,6 @@
 import requests
 from flask import Flask, render_template, jsonify
-from static.config.config import apiKey, apiSecret
+# from static.config.config import apiKey, apiSecret
 
 
 app = Flask(__name__)
