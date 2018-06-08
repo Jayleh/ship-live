@@ -1,0 +1,380 @@
+[
+    {
+        "state": "Alaska",
+        "abbreviation": "AK",
+        "latitude": 61.385,
+        "longitude": -152.2683
+    },
+    {
+        "state": "Alabama",
+        "abbreviation": "AL",
+        "latitude": 32.799,
+        "longitude": -86.8073
+    },
+    {
+        "state": "Arkansas",
+        "abbreviation": "AR",
+        "latitude": 34.9513,
+        "longitude": -92.3809
+    },
+    {
+        "state": "Arizona",
+        "abbreviation": "AZ",
+        "latitude": 33.7712,
+        "longitude": -111.3877
+    },
+    {
+        "state": "California",
+        "abbreviation": "CA",
+        "latitude": 36.17,
+        "longitude": -119.7462
+    },
+    {
+        "state": "Colorado",
+        "abbreviation": "CO",
+        "latitude": 39.0646,
+        "longitude": -105.3272
+    },
+    {
+        "state": "Connecticut",
+        "abbreviation": "CT",
+        "latitude": 41.5834,
+        "longitude": -72.7622
+    },
+    {
+        "state": "Delaware",
+        "abbreviation": "DE",
+        "latitude": 39.3498,
+        "longitude": -75.5148
+    },
+    {
+        "state": "Florida",
+        "abbreviation": "FL",
+        "latitude": 27.8333,
+        "longitude": -81.717
+    },
+    {
+        "state": "Georgia",
+        "abbreviation": "GA",
+        "latitude": 32.9866,
+        "longitude": -83.6487
+    },
+    {
+        "state": "Hawaii",
+        "abbreviation": "HI",
+        "latitude": 21.1098,
+        "longitude": -157.5311
+    },
+    {
+        "state": "Iowa",
+        "abbreviation": "IA",
+        "latitude": 42.0046,
+        "longitude": -93.214
+    },
+    {
+        "state": "Idaho",
+        "abbreviation": "ID",
+        "latitude": 44.2394,
+        "longitude": -114.5103
+    },
+    {
+        "state": "Illinois",
+        "abbreviation": "IL",
+        "latitude": 40.3363,
+        "longitude": -89.0022
+    },
+    {
+        "state": "Indiana",
+        "abbreviation": "IN",
+        "latitude": 39.8647,
+        "longitude": -86.2604
+    },
+    {
+        "state": "Kansas",
+        "abbreviation": "KS",
+        "latitude": 38.5111,
+        "longitude": -96.8005
+    },
+    {
+        "state": "Kentucky",
+        "abbreviation": "KY",
+        "latitude": 37.669,
+        "longitude": -84.6514
+    },
+    {
+        "state": "Louisiana",
+        "abbreviation": "LA",
+        "latitude": 31.1801,
+        "longitude": -91.8749
+    },
+    {
+        "state": "Massachusetts",
+        "abbreviation": "MA",
+        "latitude": 42.2373,
+        "longitude": -71.5314
+    },
+    {
+        "state": "Maryland",
+        "abbreviation": "MD",
+        "latitude": 39.0724,
+        "longitude": -76.7902
+    },
+    {
+        "state": "Maine",
+        "abbreviation": "ME",
+        "latitude": 44.6074,
+        "longitude": -69.3977
+    },
+    {
+        "state": "Michigan",
+        "abbreviation": "MI",
+        "latitude": 43.3504,
+        "longitude": -84.5603
+    },
+    {
+        "state": "Minnesota",
+        "abbreviation": "MN",
+        "latitude": 45.7326,
+        "longitude": -93.9196
+    },
+    {
+        "state": "Missouri",
+        "abbreviation": "MO",
+        "latitude": 38.4623,
+        "longitude": -92.302
+    },
+    {
+        "state": "Mississippi",
+        "abbreviation": "MS",
+        "latitude": 32.7673,
+        "longitude": -89.6812
+    },
+    {
+        "state": "Montana",
+        "abbreviation": "MT",
+        "latitude": 46.9048,
+        "longitude": -110.3261
+    },
+    {
+        "state": "North Carolina",
+        "abbreviation": "NC",
+        "latitude": 35.6411,
+        "longitude": -79.8431
+    },
+    {
+        "state": "North Dakota",
+        "abbreviation": "ND",
+        "latitude": 47.5362,
+        "longitude": -99.793
+    },
+    {
+        "state": "Nebraska",
+        "abbreviation": "NE",
+        "latitude": 41.1289,
+        "longitude": -98.2883
+    },
+    {
+        "state": "New Hampshire",
+        "abbreviation": "NH",
+        "latitude": 43.4108,
+        "longitude": -71.5653
+    },
+    {
+        "state": "New Jersey",
+        "abbreviation": "NJ",
+        "latitude": 40.314,
+        "longitude": -74.5089
+    },
+    {
+        "state": "New Mexico",
+        "abbreviation": "NM",
+        "latitude": 34.8375,
+        "longitude": -106.2371
+    },
+    {
+        "state": "Nevada",
+        "abbreviation": "NV",
+        "latitude": 38.4199,
+        "longitude": -117.1219
+    },
+    {
+        "state": "New York",
+        "abbreviation": "NY",
+        "latitude": 42.1497,
+        "longitude": -74.9384
+    },
+    {
+        "state": "Ohio",
+        "abbreviation": "OH",
+        "latitude": 40.3736,
+        "longitude": -82.7755
+    },
+    {
+        "state": "Oklahoma",
+        "abbreviation": "OK",
+        "latitude": 35.5376,
+        "longitude": -96.9247
+    },
+    {
+        "state": "Oregon",
+        "abbreviation": "OR",
+        "latitude": 44.5672,
+        "longitude": -122.1269
+    },
+    {
+        "state": "Pennsylvania",
+        "abbreviation": "PA",
+        "latitude": 40.5773,
+        "longitude": -77.264
+    },
+    {
+        "state": "Rhode Island",
+        "abbreviation": "RI",
+        "latitude": 41.6772,
+        "longitude": -71.5101
+    },
+    {
+        "state": "South Carolina",
+        "abbreviation": "SC",
+        "latitude": 33.8191,
+        "longitude": -80.9066
+    },
+    {
+        "state": "South Dakota",
+        "abbreviation": "SD",
+        "latitude": 44.2853,
+        "longitude": -99.4632
+    },
+    {
+        "state": "Tennessee",
+        "abbreviation": "TN",
+        "latitude": 35.7449,
+        "longitude": -86.7489
+    },
+    {
+        "state": "Texas",
+        "abbreviation": "TX",
+        "latitude": 31.106,
+        "longitude": -97.6475
+    },
+    {
+        "state": "Utah",
+        "abbreviation": "UT",
+        "latitude": 40.1135,
+        "longitude": -111.8535
+    },
+    {
+        "state": "Virginia",
+        "abbreviation": "VA",
+        "latitude": 37.768,
+        "longitude": -78.2057
+    },
+    {
+        "state": "Vermont",
+        "abbreviation": "VT",
+        "latitude": 44.0407,
+        "longitude": -72.7093
+    },
+    {
+        "state": "Washington",
+        "abbreviation": "WA",
+        "latitude": 47.3917,
+        "longitude": -121.5708
+    },
+    {
+        "state": "Wisconsin",
+        "abbreviation": "WI",
+        "latitude": 44.2563,
+        "longitude": -89.6385
+    },
+    {
+        "state": "West Virginia",
+        "abbreviation": "WV",
+        "latitude": 38.468,
+        "longitude": -80.9696
+    },
+    {
+        "state": "Wyoming",
+        "abbreviation": "WY",
+        "latitude": 42.7475,
+        "longitude": -107.2085
+    },
+    {
+        "state": "Alberta",
+        "abbreviation": "AB",
+        "latitude": 53.9333,
+        "longitude": -116.5765
+    },
+    {
+        "state": "British Columbia",
+        "abbreviation": "BC",
+        "latitude": 53.7267,
+        "longitude": -127.6476
+    },
+    {
+        "state": "Manitoba",
+        "abbreviation": "MB",
+        "latitude": 53.7609,
+        "longitude": -98.8139
+    },
+    {
+        "state": "New Brunswick",
+        "abbreviation": "NB",
+        "latitude": 46.5653,
+        "longitude": -66.4619
+    },
+    {
+        "state": "Newfoundland and Labrador",
+        "abbreviation": "NL",
+        "latitude": 53.1355,
+        "longitude": -57.6604
+    },
+    {
+        "state": "Nova Scotia",
+        "abbreviation": "NS",
+        "latitude": 44.6820,
+        "longitude": -63.7443
+    },
+    {
+        "state": "Northwest Territories",
+        "abbreviation": "NT",
+        "latitude": 64.8255,
+        "longitude": -124.8457
+    },
+    {
+        "state": "Nunavut",
+        "abbreviation": "NU",
+        "latitude": 70.2998,
+        "longitude": -83.1076
+    },
+    {
+        "state": "Ontario",
+        "abbreviation": "ON",
+        "latitude": 51.2538,
+        "longitude": -85.3232
+    },
+    {
+        "state": "Prince Edward Island",
+        "abbreviation": "PE",
+        "latitude": 46.5107,
+        "longitude": -63.4168
+    },
+    {
+        "state": "Québec",
+        "abbreviation": "QC",
+        "latitude": 52.9399,
+        "longitude": -73.5491
+    },
+    {
+        "state": "Saskatchewan",
+        "abbreviation": "SK",
+        "latitude": 52.9399,
+        "longitude": -106.4509
+    },
+    {
+        "state": "Yukon",
+        "abbreviation": "YT",
+        "latitude": 64.2823,
+        "longitude": -135.0000
+    }
+]
