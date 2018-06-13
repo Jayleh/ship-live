@@ -27,51 +27,44 @@
     <header></header>
 
     <main>
-      <div class="container">
+      <div class="container-fluid">
         <div class="row">
           <div class="col-md-12">
-            <!-- <h1 class="text-center">Awaiting Shipment</h1> -->
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div id="fill-gauge-container" class="col-md-5 d-flex justify-content-center"></div>
-          <!-- <svg id="donut" width="350" height="350"></svg> -->
-          <div id="map-container" class="col-md-7"></div>
-        </div>
-        <div class="row">
-          <div id="total-order-container" class="col-md-12">
-            <div id="total-order" class="d-flex justify-content-center">
-              <h1>Total Orders This Month &mdash;</h1>
+            <div id="total-order-container" class="col-md-12">
+              <div id="total-order" class="d-flex justify-content-center">
+                <h1>Total Orders This Month &mdash;</h1>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div id="pagination-container" class="container">
+      <div class="container-fluid">
         <div class="row">
-          <div class="col-md-12 d-flex justify-content-end">
-            <nav aria-label="Page navigation example">
-              <ul class="pagination"></ul>
-            </nav>
+          <div class="col-md-5 split">
+            <div id="fill-gauge-container" class="col-md-12 d-flex justify-content-center"></div>
           </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div id="table-container" class="col-md-12">
-            <table id="shipment-table" class="table table-sm table-borderless">
-              <thead>
-                <tr>
-                  <th class="text-left" style="width: 8%;">Age</th>
-                  <th class="text-left" style="width: 8%;">Order #</th>
-                  <th class="text-left" style="width: 15%;">Recipient</th>
-                  <th class="text-right" style="width: 30%;">Item Name</th>
-                  <th class="text-right" style="width: 10%;">Quantity</th>
-                  <th class="text-right" style="width: 10%;">Order Date</th>
-                </tr>
-              </thead>
-            </table>
+          <div class="col-md-7 split">
+            <div id="pagination-container" class="col-md-12 d-flex justify-content-end">
+              <nav aria-label="Page navigation example">
+                <ul class="pagination pagination-sm"></ul>
+              </nav>
+            </div>
+            <div id="shipment-table" class="col-md-12">
+              <table class="table table-sm table-borderless">
+                <thead>
+                  <tr>
+                    <th class="text-left" style="width: 8%;">Age</th>
+                    <th class="text-left" style="width: 8%;">Order #</th>
+                    <th class="text-left" style="width: 15%;">Recipient</th>
+                    <th class="text-right" style="width: 30%;">Item Name</th>
+                    <th class="text-right" style="width: 10%;">Quantity</th>
+                    <th class="text-right" style="width: 12%;">Order Date</th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+            <!-- <svg id="donut" width="350" height="350"></svg> -->
+            <div id="map-container" class="col-md-12 d-flex justify-content-center"></div>
           </div>
         </div>
       </div>

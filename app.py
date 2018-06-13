@@ -22,6 +22,7 @@ def awaiting():
     base_url = "https://ssapi.shipstation.com"
 
     query_url = "/orders?orderStatus=awaiting_shipment&page=1&pageSize=500"
+    # query_url = "/orders?orderStatus=shipped&page=1&pageSize=20"
 
     full_url = base_url + query_url
 

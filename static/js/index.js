@@ -19,8 +19,8 @@ function getShipments() {
             valueCountUpAtStart: false,
             // waveRiseAtStart: false,
             displayPercent: false,
-            minValue: 5,
-            maxValue: 50
+            minValue: 1,
+            maxValue: 30
         }
 
         // Delete fill gauge if exists
@@ -30,8 +30,8 @@ function getShipments() {
         d3.select('#fill-gauge-container')
             .append('svg')
             .attr('id', 'fill-gauge')
-            .attr('width', '350')
-            .attr('height', '350');
+            .attr('width', '300')
+            .attr('height', '300');
 
         // Generate gauge
         d3.select('#fill-gauge').call(d3.liquidfillgauge, numAwaiting, config);
@@ -51,7 +51,7 @@ function getShipments() {
 
         // Get today's date, and list weekdays
         let todayDate = new Date(),
-            weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
         // console.log(todayDate);
 
@@ -177,7 +177,7 @@ function paginate() {
         // Number of items and limits the number of items per page
         let numberOfItems = $('#shipment-table tbody tr').length;
 
-        let limitPerPage = 10;
+        let limitPerPage = 8;
         // Total pages rounded upwards
         let totalPages = Math.ceil(numberOfItems / limitPerPage);
         // Number of buttons at the top, not counting prev/next,
@@ -217,12 +217,12 @@ function paginate() {
                 $('<li>').addClass('page-item').attr({ id: 'previous-page' }).append(
                     $('<a>').addClass('page-link').attr({
                         href: 'javascript:void(0)'
-                    }).text('Prev')
+                    }).html('&laquo;')
                 ),
                 $('<li>').addClass('page-item').attr({ id: 'next-page' }).append(
                     $('<a>').addClass('page-link').attr({
                         href: 'javascript:void(0)'
-                    }).text('Next')
+                    }).html('&raquo;')
                 )
             );
         }
