@@ -130,8 +130,8 @@ function createMap(orderLocations, clusterMarkers) {
 
     // Create map
     let myMap = L.map("map", {
-        center: [39.8283, -98.5795],
-        zoom: 3,
+        center: [39.4389, -98.6948],
+        zoom: 4,
         layers: [streets, clusterMarkers]
     });
 
