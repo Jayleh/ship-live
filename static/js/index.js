@@ -20,7 +20,7 @@ function getShipments() {
             // waveRiseAtStart: false,
             displayPercent: false,
             minValue: 1,
-            maxValue: 30
+            maxValue: 20
         }
 
         // Delete fill gauge if exists
@@ -30,8 +30,8 @@ function getShipments() {
         d3.select('#fill-gauge-container')
             .append('svg')
             .attr('id', 'fill-gauge')
-            .attr('width', '300')
-            .attr('height', '300');
+            .attr('width', '275')
+            .attr('height', '275');
 
         // Generate gauge
         d3.select('#fill-gauge').call(d3.liquidfillgauge, numAwaiting, config);

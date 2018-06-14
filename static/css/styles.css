@@ -9,6 +9,7 @@ body {
 }
 
 .split {
+    position: relative;
     height: 77vh;
 }
 
@@ -24,14 +25,33 @@ body {
     margin: 0;
 }
 
-/* #fill-gauge-container {
+#fill-gauge-container {
     position: absolute;
+    left: 50%;
     top: 0;
-} */
+    transform: translate(-50%, 0);
+}
 
 .liquidFillGaugeText {
     font-family: 'Knewave', cursive;
     font-weight: bold;
+}
+
+#map-container {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 0);
+}
+
+#map {
+    height: 275px;
+    width: 600px;
+    border-radius: 15px;
+}
+
+.leaflet-popup-content p {
+    margin: 0;
 }
 
 /* #pagination-container {
@@ -40,7 +60,9 @@ body {
 
 #shipment-table {
     position: absolute;
-    
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, 0);
 }
 
 table {
@@ -67,21 +89,6 @@ ul {
     margin: 0;
 }
 
-#map-container {
-    position: absolute;
-    bottom: 0;
-}
-
-#map {
-    height: 300px;
-    width: 600px;
-    border-radius: 15px;
-}
-
-.leaflet-popup-content p {
-    margin: 0;
-}
-
 #total-order h1:nth-child(1) {
     font-family: 'Roboto', sans-serif;
     font-size: 50px;
@@ -96,7 +103,6 @@ ul {
     text-align: center;
     padding-left: 20px;
 }
-
 
 
 /* Extra large devices (large desktops, 1200px and up) */
@@ -117,7 +123,7 @@ ul {
 
     #map {
         height: 360px;
-        width: 700px;
+        width: 670px;
         border-radius: 15px;
     }
 }
