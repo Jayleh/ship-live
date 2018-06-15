@@ -49,5 +49,21 @@ def shipped(date):
     return jsonify(data)
 
 
+@app.route("/on-hold")
+def on_hold():
+
+    base_url = "https://ssapi.shipstation.com"
+
+    query_url = f"/orders?orderStatus=on_hold&page=1&pageSize=500"
+
+    full_url = base_url + query_url
+
+    response = requests.get(full_url, auth=(apiKey, apiSecret))
+
+    data = response.json()
+
+    return jsonify(data)
+
+
 if __name__ == "__main__":
     app.run(debug=True)

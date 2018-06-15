@@ -1,4 +1,4 @@
-function getShipments() {
+function getAwaiting() {
     d3.json('/awaiting', (error, ordersData) => {
         if (error) throw error;
 
@@ -43,78 +43,11 @@ function getShipments() {
             location.reload();
         });
 
-        // Remove any existing tbody in table
-        d3.select('tbody').remove()
+        // Get on hold table id
+        let tableId = '#awaiting-table';
 
-        // Generate table
-        let $tbody = d3.select('table').append('tbody');
-
-        // Get today's date, and list weekdays
-        let todayDate = new Date(),
-            weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-
-        // console.log(todayDate);
-
-        for (let i = 0, ii = ordersData.orders.length; i < ii; i++) {
-
-            // Create variable for order each order
-            let order = ordersData.orders[i];
-
-            // Data fields for table
-            let orderDate = new Date(order.orderDate),
-                age = getAge(orderDate),
-                weekday = weekdays[orderDate.getDay()],
-                month = orderDate.getMonth() + 1,
-                date = orderDate.getDate(),
-                orderNum = order.orderNumber,
-                recipient = order.shipTo.name,
-                products = order.items,
-                productNameList = [],
-                itemName,
-                numProducts = 0;
-
-            // console.log(orderDate);
-
-            for (let j = 0, jj = products.length; j < jj; j++) {
-
-                if (products[j].name !== 'Total Discount') {
-                    numProducts += products[j].quantity;
-                    productNameList.push(products[j].name);
-                }
-
-            }
-
-            if (productNameList.length === 1) {
-
-                itemName = productNameList[0];
-
-            }
-            else if (productNameList.length >= 2) {
-
-                itemName = '(Multiple Items)';
-
-            }
-            else {
-                itemName = 'null';
-            }
-
-            // console.log(productNameList);
-
-            $tbody.append('tr')
-                .attr('class', 'text-right')
-                .html(
-                    `<td class='text-left' style='color: ${getColor(age[0], age[1])}'><strong>${age[0]}d ${age[1]}h</strong></td><td class='text-left'>${orderNum}</td><td class='text-left'>${recipient}</td><td>${itemName}</td><td>${numProducts}</td><td>${weekday}, ${month}/${date}</td>`
-                );
-        }
-
-        function getAge(orderDate) {
-            let ageDay = Math.abs(todayDate - orderDate) / 8.64e7, // in days ex. 0.5215
-                ageHour = Math.abs(todayDate - orderDate) / 3.6e6, // in hours ex. 12.516
-                days = Math.floor(ageDay), // 0 in 0.5
-                hours = Math.floor(ageHour % 24);
-
-            return [days, hours];
-        }
+        // Fill table with awaiting data
+        fillTable(ordersData, tableId);
 
         // Create pagination
         paginate();
@@ -122,8 +55,99 @@ function getShipments() {
 }
 
 
-// Run getShipments on initial load
-getShipments();
+function getOnHold() {
+    d3.json('/on-hold', (error, ordersData) => {
+
+        console.log(ordersData);
+
+        // Get on hold table id
+        let tableId = '#on-hold-table';
+
+        fillTable(ordersData, tableId);
+
+    });
+}
+
+
+function fillTable(ordersData, tableId) {
+    // Remove any existing tbody in table
+    d3.select(`${tableId} tbody`).remove()
+
+    // Generate table
+    let $tbody = d3.select(`${tableId} table`).append('tbody');
+
+    // Get today's date, and list weekdays
+    let todayDate = new Date(),
+        weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+    // console.log(todayDate);
+
+    for (let i = 0, ii = ordersData.orders.length; i < ii; i++) {
+
+        // Create variable for order each order
+        let order = ordersData.orders[i];
+
+        // Data fields for table
+        let orderDate = new Date(order.orderDate),
+            age = getAge(orderDate),
+            weekday = weekdays[orderDate.getDay()],
+            month = orderDate.getMonth() + 1,
+            date = orderDate.getDate(),
+            orderNum = order.orderNumber,
+            recipient = order.shipTo.name,
+            products = order.items,
+            productNameList = [],
+            itemName,
+            numProducts = 0;
+
+        // console.log(orderDate);
+
+        for (let j = 0, jj = products.length; j < jj; j++) {
+
+            if (products[j].name !== 'Total Discount') {
+                numProducts += products[j].quantity;
+                productNameList.push(products[j].name);
+            }
+
+        }
+
+        if (productNameList.length === 1) {
+
+            itemName = productNameList[0];
+
+        }
+        else if (productNameList.length >= 2) {
+
+            itemName = '(Multiple Items)';
+
+        }
+        else {
+            itemName = 'null';
+        }
+
+        // console.log(productNameList);
+
+        $tbody.append('tr')
+            .attr('class', 'text-right')
+            .html(
+                `<td class='text-left' style='color: ${getColor(age[0], age[1])}'><strong>${age[0]}d ${age[1]}h</strong></td><td class='text-left'>${orderNum}</td><td class='text-left'>${recipient}</td><td>${itemName}</td><td>${numProducts}</td><td>${weekday}, ${month}/${date}</td>`
+            );
+    }
+
+    function getAge(orderDate) {
+        let ageDay = Math.abs(todayDate - orderDate) / 8.64e7, // in days ex. 0.5215
+            ageHour = Math.abs(todayDate - orderDate) / 3.6e6, // in hours ex. 12.516
+            days = Math.floor(ageDay), // 0 in 0.5
+            hours = Math.floor(ageHour % 24);
+
+        return [days, hours];
+    }
+}
+
+
+// Run getAwaiting and getOnHold on initial load
+getAwaiting();
+getOnHold();
 
 
 // Function for color scale based age
@@ -175,7 +199,7 @@ function paginate() {
 
     $(function () {
         // Number of items and limits the number of items per page
-        let numberOfItems = $('#shipment-table tbody tr').length;
+        let numberOfItems = $('#awaiting-table tbody tr').length;
 
         let limitPerPage = 8;
         // Total pages rounded upwards
@@ -191,7 +215,7 @@ function paginate() {
                 return false;
             }
             currentPage = whichPage;
-            $('#shipment-table tbody tr').hide()
+            $('#awaiting-table tbody tr').hide()
                 .slice((currentPage - 1) * limitPerPage, currentPage * limitPerPage).show();
 
             // Replace the navigation items (not prev/next):            
@@ -228,7 +252,7 @@ function paginate() {
         }
 
         // Show the page links
-        $('#shipment-table').show();
+        $('#awaiting-table').show();
         showPage(1);
 
         // Use event delegation, as these items are recreated later    
@@ -249,5 +273,6 @@ function paginate() {
 
 // Run getShipments every 10 minutes
 window.setInterval(function () {
-    getShipments();
+    getAwaiting();
+    getOnHold();
 }, 6e5);

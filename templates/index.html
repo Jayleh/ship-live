@@ -41,29 +41,70 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-6 split">
-            <div id="fill-gauge-container" class=""></div>
-            <!-- <svg id="donut" width="350" height="350"></svg> -->
-            <div id="map-container" class=""></div>
-          </div>
-          <div class="col-md-6 split">
-            <div id="pagination-container" class="col-md-12 d-flex justify-content-end">
-              <nav aria-label="Page navigation example">
-                <ul class="pagination pagination-sm"></ul>
-              </nav>
+            <div class="row">
+              <div id="fill-gauge-container" class="col-md-12 d-flex justify-content-center"></div>
             </div>
-            <div id="shipment-table" class="col-md-12">
-              <table class="table table-sm table-borderless">
-                <thead>
-                  <tr>
-                    <th class="text-left" style="width: 8%;">Age</th>
-                    <th class="text-left" style="width: 8%;">Order #</th>
-                    <th class="text-left" style="width: 15%;">Recipient</th>
-                    <th class="text-right" style="width: 30%;">Item Name</th>
-                    <th class="text-right" style="width: 10%;">Quantity</th>
-                    <th class="text-right" style="width: 12%;">Order Date</th>
-                  </tr>
-                </thead>
-              </table>
+            <!-- <svg id="donut" width="350" height="350"></svg> -->
+            <div class="row">
+              <div id="map-container" class="col-md-12 d-flex justify-content-center"></div>
+            </div>
+          </div>
+          <div id="right-split" class="col-md-6 d-flex align-items-between flex-column split">
+            <div class="container mb-auto">
+              <div class="row">
+                <div class="col-md-12 d-flex justify-content-between table-heading-container">
+                  <h3>
+                    <strong>Awaiting Shipments</strong>
+                  </h3>
+                  <nav aria-label="Page navigation example">
+                    <ul class="pagination pagination-sm"></ul>
+                  </nav>
+                </div>
+              </div>
+              <div class="row">
+                <div id="awaiting-table" class="col-md-12">
+                  <table class="table table-sm table-borderless">
+                    <thead>
+                      <tr>
+                        <th class="text-left" style="width: 8%;">Age</th>
+                        <th class="text-left" style="width: 8%;">Order #</th>
+                        <th class="text-left" style="width: 15%;">Recipient</th>
+                        <th class="text-right" style="width: 30%;">Item Name</th>
+                        <th class="text-right" style="width: 10%;">Quantity</th>
+                        <th class="text-right" style="width: 12%;">Order Date</th>
+                      </tr>
+                    </thead>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12 d-flex justify-content-between table-heading-container">
+                  <h3>
+                    <strong>Shipments On Hold</strong>
+                  </h3>
+                  <!-- <nav aria-label="Page navigation example">
+                    <ul class="pagination pagination-sm"></ul>
+                  </nav> -->
+                </div>
+              </div>
+              <div class="row">
+                <div id="on-hold-table" class="col-md-12">
+                  <table class="table table-sm table-borderless">
+                    <thead>
+                      <tr>
+                        <th class="text-left" style="width: 8%;">Age</th>
+                        <th class="text-left" style="width: 8%;">Order #</th>
+                        <th class="text-left" style="width: 15%;">Recipient</th>
+                        <th class="text-right" style="width: 30%;">Item Name</th>
+                        <th class="text-right" style="width: 10%;">Quantity</th>
+                        <th class="text-right" style="width: 12%;">Order Date</th>
+                      </tr>
+                    </thead>
+                  </table>
+                </div>
+              </div>
             </div>
           </div>
         </div>

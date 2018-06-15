@@ -8,15 +8,6 @@ body {
     background-size: cover;
 }
 
-.split {
-    position: relative;
-    height: 77vh;
-}
-
-/* #svg-container {
-    padding: 30px 15px;
-} */
-
 .container-fluid {
     padding: 20px 100px;
 }
@@ -25,11 +16,9 @@ body {
     margin: 0;
 }
 
-#fill-gauge-container {
-    position: absolute;
-    left: 50%;
-    top: 0;
-    transform: translate(-50%, 0);
+.col-md-12 {
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .liquidFillGaugeText {
@@ -38,15 +27,12 @@ body {
 }
 
 #map-container {
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translate(-50%, 0);
+    padding-top: 30px;
 }
 
 #map {
     height: 275px;
-    width: 600px;
+    width: 100%;
     border-radius: 15px;
 }
 
@@ -54,16 +40,37 @@ body {
     margin: 0;
 }
 
-/* #pagination-container {
-    padding: 0;
+/* .split {
+    position: relative;
+    height: 77vh;
 } */
 
-#shipment-table {
+#right-split {
+    height: 435px;
+}
+
+#right-split div.container {
+    padding: 0;
+}
+
+#right-split h3 {
+    margin: 0;
+}
+
+.table-heading-container {
+    padding-bottom: 15px;
+}
+
+#right-split div.container:nth-child(2) h3 {
+    padding-top: 15px;
+}
+
+/* #awaiting-table {
     position: absolute;
     left: 50%;
     top: 0;
     transform: translate(-50%, 0);
-}
+} */
 
 table {
     font-size: 13px;
@@ -108,22 +115,24 @@ ul {
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1600px) {
     
-    .split {
+    /* .split {
         height: 80vh;
+    } */
+
+    #right-split {
+        height: 450px;
     }
 
     table {
         font-size: 16px;
     }
 
-    #fill-gauge-container {
+    /* #fill-gauge-container {
         position: absolute;
         top: 5%;
-    }
+    } */
 
     #map {
-        height: 360px;
-        width: 670px;
-        border-radius: 15px;
+        height: 300px;
     }
 }
