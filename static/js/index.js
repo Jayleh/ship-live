@@ -50,7 +50,9 @@ function getAwaiting() {
         fillTable(ordersData, tableId);
 
         // Create pagination
-        paginate();
+        if (numAwaiting > 11) {
+            paginate();
+        }
     });
 }
 
@@ -201,7 +203,7 @@ function paginate() {
         // Number of items and limits the number of items per page
         let numberOfItems = $('#awaiting-table tbody tr').length;
 
-        let limitPerPage = 8;
+        let limitPerPage = 10;
         // Total pages rounded upwards
         let totalPages = Math.ceil(numberOfItems / limitPerPage);
         // Number of buttons at the top, not counting prev/next,
