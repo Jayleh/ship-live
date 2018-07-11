@@ -2,25 +2,31 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    width: 100%;
+    /* width: 100%; */
     height: 100%;
-    background: url('../img/abstract-gray-waves.png'), no-repeat;
+    background: url('../img/abstract-gray-waves.png');
+    background-repeat: no-repeat;
     background-size: cover;
 }
 
-#total-order h1:nth-child(1) {
+#total-order-container div:nth-child(2) h1 {
     font-family: 'Roboto', sans-serif;
     font-size: 22px;
     font-weight: bolder;
     text-align: center;
     margin-top: 10px;
+    padding-left: 10px;
 }
 
 #total-order-number {
     font-family: 'Knewave', cursive;
     font-size: 34px;
     text-align: center;
-    padding-left: 7px;
+}
+
+#logout-btn {
+    position: absolute;
+    left: 80%;
 }
 
 .liquidFillGaugeText {
@@ -72,8 +78,15 @@ ul {
     margin: 0;
 }
 
+
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) { 
+
+    #logout-btn {
+        position: absolute;
+        left: 90%;
+        bottom: 26%;
+    }
 
     #right-split div.container {
         margin-left: 0;
@@ -93,7 +106,7 @@ ul {
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
 
-    #total-order h1:nth-child(1) {
+    #total-order-container div:nth-child(2) h1 {
         font-size: 40px;
     }
     
@@ -114,12 +127,18 @@ ul {
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
 
-    #total-order h1:nth-child(1) {
+    #total-order-container div:nth-child(2) h1 {
         font-size: 40px;
     }
     
     #total-order-number {
         font-size: 50px;
+    }
+
+    #logout-btn {
+        position: absolute;
+        left: 90%;
+        bottom: 27%;
     }
 
     #map {
@@ -132,7 +151,7 @@ ul {
     }
 
     #right-split {
-        height: 450px;
+        height: 520px;
     }
 
 }
@@ -144,7 +163,7 @@ ul {
         padding: 7.5px 15px;
     }
     
-    #total-order h1:nth-child(1) {
+    #total-order-container div:nth-child(2) h1 {
         font-size: 40px;
     }
     

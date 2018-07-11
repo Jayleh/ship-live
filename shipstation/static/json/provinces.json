@@ -1,0 +1,80 @@
+[
+    {
+        "state": "Alberta",
+        "abbreviation": "AB",
+        "latitude": 53.9333,
+        "longitude": -116.5765
+    },
+    {
+        "state": "British Columbia",
+        "abbreviation": "BC",
+        "latitude": 53.7267,
+        "longitude": -127.6476
+    },
+    {
+        "state": "Manitoba",
+        "abbreviation": "MB",
+        "latitude": 53.7609,
+        "longitude": -98.8139
+    },
+    {
+        "state": "New Brunswick",
+        "abbreviation": "NB",
+        "latitude": 46.5653,
+        "longitude": -66.4619
+    },
+    {
+        "state": "Newfoundland and Labrador",
+        "abbreviation": "NL",
+        "latitude": 53.1355,
+        "longitude": -57.6604
+    },
+    {
+        "state": "Nova Scotia",
+        "abbreviation": "NS",
+        "latitude": 44.6820,
+        "longitude": -63.7443
+    },
+    {
+        "state": "Northwest Territories",
+        "abbreviation": "NT",
+        "latitude": 64.8255,
+        "longitude": -124.8457
+    },
+    {
+        "state": "Nunavut",
+        "abbreviation": "NU",
+        "latitude": 70.2998,
+        "longitude": -83.1076
+    },
+    {
+        "state": "Ontario",
+        "abbreviation": "ON",
+        "latitude": 51.2538,
+        "longitude": -85.3232
+    },
+    {
+        "state": "Prince Edward Island",
+        "abbreviation": "PE",
+        "latitude": 46.5107,
+        "longitude": -63.4168
+    },
+    {
+        "state": "Québec",
+        "abbreviation": "QC",
+        "latitude": 52.9399,
+        "longitude": -73.5491
+    },
+    {
+        "state": "Saskatchewan",
+        "abbreviation": "SK",
+        "latitude": 52.9399,
+        "longitude": -106.4509
+    },
+    {
+        "state": "Yukon",
+        "abbreviation": "YT",
+        "latitude": 64.2823,
+        "longitude": -135.0000
+    }
+]

@@ -20,7 +20,7 @@
     <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.css">
     <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.Default.css">
     <!-- External styles -->
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}">
   </head>
 
   <body>
@@ -30,11 +30,13 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-12">
-            <div id="total-order-container">
-              <div id="total-order" class="d-flex justify-content-center">
-                <h1>Total Orders This Month &mdash;</h1>
+            <div id="total-order-container" class="d-flex justify-content-center">
+              <div id="total-order"></div>
+              <div>
+                <h1>Orders This Month</h1>
               </div>
             </div>
+            <a id="logout-btn" class="btn btn-outline-dark btn-sm" href="{{ url_for('logout') }}">Logout</a>
           </div>
         </div>
       </div>
