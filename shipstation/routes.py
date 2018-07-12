@@ -13,7 +13,9 @@ def home():
     return render_template("index.html")
 
 
+# Disabling route
 @app.route("/register", methods=["GET", "POST"])
+@login_required
 def register():
     form = RegistrationForm()
     if form.validate_on_submit():
