@@ -1,4 +1,4 @@
-from shipstation.models import db
+from shipstation import db
 
 # db.drop_all()
 db.create_all()
