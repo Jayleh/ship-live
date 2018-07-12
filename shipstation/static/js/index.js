@@ -273,7 +273,7 @@ function paginate() {
 
 
 // Run getShipments every 10 minutes
-// window.setInterval(function () {
-//     getAwaiting();
-//     getOnHold();
-// }, 6e5);
+window.setInterval(function () {
+    getAwaiting();
+    getOnHold();
+}, 6e5);

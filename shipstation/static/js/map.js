@@ -146,6 +146,6 @@ function createMap(orderLocations, clusterMarkers) {
 
 
 // Run getShipments every 10 minutes
-// window.setInterval(function () {
-//     generateMap();
-// }, 6e5);
+window.setInterval(function () {
+    generateMap();
+}, 6e5);
