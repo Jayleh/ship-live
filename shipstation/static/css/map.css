@@ -21,4 +21,5 @@ html {
     left: 5%;
     top: 95%;
     transform: translate(-50%, -50%);
+    z-index: 1;
 }

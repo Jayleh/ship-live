@@ -127,7 +127,7 @@ function createMap(orderLocations, clusterMarkers) {
     d3.select('#map-container')
         .append('div')
         .attr('id', 'map')
-        .style('z-index', '-1')
+        .style('z-index', '0')
 
     // Create map
     let myMap = L.map("map", {
