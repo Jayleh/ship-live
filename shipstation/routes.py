@@ -34,8 +34,8 @@ def login():
     if form.validate_on_submit():
         user = User.query.filter_by(email=form.email.data).first()
         print(user)
-        print(form.password.data)
-        print(bcrypt.check_password_hash(user.password, form.password.data))
+        print(form.password.data.encode("utf-8"))
+        print(bcrypt.check_password_hash(user.password, form.password.data.encode("utf-8")))
         if user and bcrypt.check_password_hash(user.password, form.password.data):
             login_user(user, remember=form.remember.data)
             next_page = request.args.get("next")
