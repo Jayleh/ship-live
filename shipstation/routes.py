@@ -38,10 +38,10 @@ def login():
         print(f"{form.password.data}")
         print(str(form.password.data))
         print(bcrypt.check_password_hash(user.password, f"{form.password.data}"))
-        print(bcrypt.check_password_hash(user.password, str(form.password.data))
+        print(bcrypt.check_password_hash(user.password, str(form.password.data)))
         if user and bcrypt.check_password_hash(user.password, form.password.data):
             login_user(user, remember=form.remember.data)
-            next_page = request.args.get("next")
+            next_page=request.args.get("next")
             return redirect(next_page) if next_page else redirect(url_for("home"))
         else:
             flash("Login unsuccessful. Please check email and password.", "danger")
@@ -64,16 +64,16 @@ def mappy():
 @login_required
 def awaiting():
 
-    base_url = "https://ssapi.shipstation.com"
+    base_url="https://ssapi.shipstation.com"
 
-    query_url = "/orders?orderStatus=awaiting_shipment&page=1&pageSize=500"
+    query_url="/orders?orderStatus=awaiting_shipment&page=1&pageSize=500"
     # query_url = "/orders?orderStatus=shipped&page=1&pageSize=20"
 
-    full_url = base_url + query_url
+    full_url=base_url + query_url
 
-    response = requests.get(full_url, auth=(apiKey, apiSecret))
+    response=requests.get(full_url, auth=(apiKey, apiSecret))
 
-    data = response.json()
+    data=response.json()
 
     return jsonify(data)
 
@@ -82,15 +82,15 @@ def awaiting():
 @login_required
 def shipped(date):
 
-    base_url = "https://ssapi.shipstation.com"
+    base_url="https://ssapi.shipstation.com"
 
-    query_url = f"/orders?orderStatus=shipped&orderDateStart={date}&page=1&pageSize=500"
+    query_url=f"/orders?orderStatus=shipped&orderDateStart={date}&page=1&pageSize=500"
 
-    full_url = base_url + query_url
+    full_url=base_url + query_url
 
-    response = requests.get(full_url, auth=(apiKey, apiSecret))
+    response=requests.get(full_url, auth=(apiKey, apiSecret))
 
-    data = response.json()
+    data=response.json()
 
     return jsonify(data)
 
@@ -99,14 +99,14 @@ def shipped(date):
 @login_required
 def on_hold():
 
-    base_url = "https://ssapi.shipstation.com"
+    base_url="https://ssapi.shipstation.com"
 
-    query_url = f"/orders?orderStatus=on_hold&page=1&pageSize=500"
+    query_url=f"/orders?orderStatus=on_hold&page=1&pageSize=500"
 
-    full_url = base_url + query_url
+    full_url=base_url + query_url
 
-    response = requests.get(full_url, auth=(apiKey, apiSecret))
+    response=requests.get(full_url, auth=(apiKey, apiSecret))
 
-    data = response.json()
+    data=response.json()
 
     return jsonify(data)
