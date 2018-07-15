@@ -6,11 +6,11 @@ Shipstation dashboard revealing important indicators such as awaiting and on-hol
 ![PNG](documentation/images/map.PNG)
 
 ## Technology Stack
-Python 3.6
-Flask framework
-Sqlite
-Javascript
-HTML/CSS/Bootstrap
+Python 3.6<br>
+Flask framework<br>
+Sqlite<br>
+Javascript<br>
+HTML/CSS/Bootstrap<br>
 
 ## License
 [MIT](LICENSE) © Justin Le
