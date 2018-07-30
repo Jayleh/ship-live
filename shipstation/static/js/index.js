@@ -49,6 +49,9 @@ function getAwaiting() {
         // Fill table with awaiting data
         fillTable(ordersData, tableId);
 
+        // Delete pagination if exits
+        d3.selectAll('.pagination li').remove();
+
         // Create pagination
         if (numAwaiting > 11) {
             paginate();
