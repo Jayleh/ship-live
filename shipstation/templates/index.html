@@ -60,7 +60,7 @@
                     <strong>Awaiting Shipments</strong>
                   </h3>
                   <nav aria-label="Page navigation example">
-                    <ul class="pagination pagination-sm"></ul>
+                    <ul id="awaiting-pagination" class="pagination pagination-sm"></ul>
                   </nav>
                 </div>
               </div>
@@ -87,9 +87,9 @@
                   <h3>
                     <strong>Shipments On Hold</strong>
                   </h3>
-                  <!-- <nav aria-label="Page navigation example">
-                  <ul class="pagination pagination-sm"></ul>
-                </nav> -->
+                  <nav aria-label="Page navigation example">
+                    <ul id="on-hold-pagination" class="pagination pagination-sm"></ul>
+                  </nav>
                 </div>
               </div>
               <div class="row">
@@ -127,7 +127,7 @@
     <!-- liquidFillGauge.js -->
     <script src="{{ url_for('static', filename='js/liquidFillGaugeV2.js') }}"></script>
     <!-- External JavaScript -->
-    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/test-index.js') }}"></script>
     <script src="{{ url_for('static', filename='js/map.js') }}"></script>
   </body>
 
