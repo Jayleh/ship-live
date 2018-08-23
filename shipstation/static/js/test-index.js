@@ -61,7 +61,7 @@ function getAwaiting() {
 
 function getOnHold() {
   d3.json("/on-hold", (error, ordersData) => {
-    console.log(ordersData);
+    if (error) throw error;
 
     let numOnHold = ordersData.orders.length;
 
