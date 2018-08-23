@@ -63,6 +63,8 @@ function getOnHold() {
   d3.json("/on-hold", (error, ordersData) => {
     console.log(ordersData);
 
+    let numOnHold = ordersData.orders.length;
+
     // Get on hold table id
     let tableId = "#on-hold-table";
 
@@ -72,7 +74,7 @@ function getOnHold() {
       pageLimit = 4;
 
     // Create pagination
-    if (numAwaiting > pageLimit) {
+    if (numOnHold > pageLimit) {
       paginate(tableId, paginationId, pageLimit);
     }
   });
