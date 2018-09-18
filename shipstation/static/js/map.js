@@ -33,7 +33,7 @@ function generateMap() {
             d3.select('#total-order')
                 .append('h1')
                 .attr('id', 'total-order-number')
-                .html(`${numShipped}`);
+                .html(`${numShipped} Orders This Month`);
 
             for (let i = 0, ii = numShipped; i < ii; i++) {
 
@@ -93,7 +93,7 @@ function createMap(orderLocations, clusterMarkers) {
         '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
         'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>, ' +
         'Click <a href="/map">here</a> for full map.',
-        mbKey = 'pk.eyJ1IjoiamF5bGVoIiwiYSI6ImNqaDFhaWo3MzAxNTQycXFtYzVraGJzMmQifQ.JbX9GR_RiSKxSwz9ZK4buw',
+        mbKey = process.env.MAPBOX_KEY,
         mbUrl = `https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=${mbKey}`,
         mbStyleUrl = `https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/256/{z}/{x}/{y}?access_token=${mbKey}`;
 
@@ -143,7 +143,6 @@ function createMap(orderLocations, clusterMarkers) {
         })
         .addTo(myMap);
 }
-
 
 // Run getShipments every 10 minutes
 window.setInterval(function () {

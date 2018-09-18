@@ -8,8 +8,10 @@ from flask_login import LoginManager
 app = Flask(__name__)
 
 app.config["SECRET_KEY"] = os.environ["SECRET_KEY"]
-# app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///site.sqlite"
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', '')
+
+apiKey = os.environ["apiKey"]
+apiSecret = os.environ["apiSecret"]
 
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)

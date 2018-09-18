@@ -5,41 +5,32 @@
     transform: translate(-50%, -50%);
 }
 
-
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) { 
-
     #user-input-card {
         transform: translate(-50%, -40%);
     }
-
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-
     #user-input-card {
         width: 60%;
         transform: translate(-50%, -40%);
     }
-
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-
     #user-input-card {
         width: 45%;
         transform: translate(-50%, -50%);
     }
-    
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-
     #user-input-card {
         width: 35%;
     }
-
 }

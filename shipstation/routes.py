@@ -1,8 +1,7 @@
 import requests
 from flask import render_template, jsonify, redirect, url_for, flash, request
-from shipstation import app, db, bcrypt
+from shipstation import app, db, bcrypt, apiKey, apiSecret
 from shipstation.forms import RegistrationForm, LoginForm
-from shipstation.config import apiKey, apiSecret
 from shipstation.models import User
 from flask_login import login_user, current_user, logout_user, login_required
 
@@ -23,7 +22,8 @@ def register():
         user = User(username=form.username.data, email=form.email.data, password=hashed_password)
         db.session.add(user)
         db.session.commit()
-        flash(f"Account created for {form.username.data}! Please log in.", "success")
+        flash(f"Account created for {form.username.data}! Please log in.",
+              "background-color: #64b5f6;")
         return redirect(url_for("login"))
     return render_template("registration.html", title="Register", form=form)
 
@@ -40,7 +40,7 @@ def login():
             next_page = request.args.get("next")
             return redirect(next_page) if next_page else redirect(url_for("home"))
         else:
-            flash("Login unsuccessful. Please check email and password.", "danger")
+            flash("Login unsuccessful. Please check email and password.", "background-color: #e57373;")
     return render_template("login.html", title="Login", form=form)
 
 
@@ -63,7 +63,7 @@ def awaiting():
     base_url = "https://ssapi.shipstation.com"
 
     query_url = "/orders?orderStatus=awaiting_shipment&page=1&pageSize=500"
-    # query_url = "/orders?orderStatus=shipped&page=1&pageSize=20"
+    # query_url = "/orders?orderStatus=shipped&page=1&pageSize=26"
 
     full_url = base_url + query_url
 
@@ -81,6 +81,7 @@ def shipped(date):
     base_url = "https://ssapi.shipstation.com"
 
     query_url = f"/orders?orderStatus=shipped&orderDateStart={date}&page=1&pageSize=500"
+    # query_url = "/orders?orderStatus=shipped&page=1&pageSize=5"
 
     full_url = base_url + query_url
 
@@ -98,6 +99,7 @@ def on_hold():
     base_url = "https://ssapi.shipstation.com"
 
     query_url = f"/orders?orderStatus=on_hold&page=1&pageSize=500"
+    # query_url = "/orders?orderStatus=shipped&page=1&pageSize=5"
 
     full_url = base_url + query_url
 

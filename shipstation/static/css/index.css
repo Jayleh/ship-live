@@ -1,41 +1,31 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto|Knewave');
-
-body {
-    font-family: 'Roboto', sans-serif;
-    /* width: 100%; */
-    height: 100%;
-    background: url('../img/abstract-gray-waves.png');
-    background-repeat: no-repeat;
-    background-size: cover;
+.text-center {
+    text-align: center;
 }
 
-#total-order-container div:nth-child(2) h1 {
-    font-family: 'Roboto', sans-serif;
-    font-size: 22px;
-    font-weight: bolder;
-    text-align: center;
-    margin-top: 10px;
-    padding-left: 10px;
+.card-table {
+    min-height: 410px;
 }
 
 #total-order-number {
-    font-family: 'Knewave', cursive;
-    font-size: 34px;
-    text-align: center;
+    font-size: 30px;
+    margin: 1.8rem 0 0 0;
 }
 
-#logout-btn {
-    position: absolute;
-    left: 80%;
+.card-title h3 {
+    font-size: 26px;
+    margin: 0 0 2rem 0;
 }
 
-.liquidFillGaugeText {
-    font-family: 'Knewave', cursive;
-    font-weight: bold;
+th {
+    white-space: nowrap;
 }
 
-#map-container {
-    padding-top: 30px;
+td {
+    max-width: 100px;
+    overflow: hidden; 
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: inherit;
 }
 
 #map {
@@ -48,136 +38,62 @@ body {
     margin: 0;
 }
 
-#left-split {
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-.split {
-    padding: 15px;
-}
-
-table {
-    font-size: 13px;
-}
-
-th {
-    text-align: center;
-    white-space: nowrap;
-}
-
-td {
-    max-width: 100px;
-    overflow: hidden; 
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    width: inherit;
-}
-
-ul {
-    margin: 0;
-}
-
-
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) { 
-
-    #logout-btn {
-        position: absolute;
-        left: 90%;
-        bottom: 26%;
+    td {
+        max-width: 120px;
     }
 
-    #right-split div.container {
-        margin-left: 0;
-        margin-right: 0;
+    #map {
+        height: 310px;
     }
-
-    #right-split .row {
-        margin: 0;
-    }
-
-    .no-padding {
-        padding: 0;
-    }
-
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-
-    #total-order-container div:nth-child(2) h1 {
-        font-size: 40px;
-    }
-    
-    #total-order-number {
-        font-size: 50px;
-    }
-
     #map {
-        height: 325px;
+        height: 385px;
     }
-
-    table {
-        font-size: 14px;
-    }
-
 }
 
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-
-    #total-order-container div:nth-child(2) h1 {
-        font-size: 40px;
-    }
-    
-    #total-order-number {
-        font-size: 50px;
-    }
-
-    #logout-btn {
+/* Large devices (desktops, 993px and up) */
+@media (min-width: 993px) {
+    #map-card, #hold-card {
         position: absolute;
-        left: 90%;
-        bottom: 27%;
+        bottom: 0%;
     }
 
     #map {
-        height: 300px;
-
+        height: unset;
+        min-height: 335px;
+    }
+    
+    #hold-card {
+        left: 50%;
     }
 
-    table {
-        font-size: 16px;
+    .card-table {
+        min-height: unset;
     }
 
-    #right-split {
-        height: 520px;
+    #awaiting-card .card-table {
+        min-height: 415px;
     }
 
+    #hold-card .card-table {
+        min-height: 235px;
+    }
+
+    td, th {
+        padding: 5px 5px;
+    }
+
+    td {
+        max-width: 88px;
+    }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-
-    .container-fluid {
-        padding: 7.5px 15px;
-    }
-    
-    #total-order-container div:nth-child(2) h1 {
-        font-size: 40px;
-    }
-    
-    #total-order-number {
-        font-size: 50px;
-    }
-
-    #map {
-        height: 330px;
-        width: 675px;
-    }
-
-    table {
-        font-size: 16px;
-    }
 
 }
