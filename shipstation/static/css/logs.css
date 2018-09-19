@@ -7,19 +7,44 @@
 
 #menu {
     position: fixed;
-    bottom: 50px;
-    right: 50px;
+    bottom: 35px;
+    right: 35px;
 }
 
 .tap-target {
     background-color: wheat;
-    
+}
+
+.tap-target-content {
+    top: 70px!important;
+    left: 30px!important;
+}
+
+#demo-card {
+    height: 215px;
+}
+
+#demo-card .card-image {
+    max-height: 60%!important;
 }
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) { 
     #user-input-card {
         transform: translate(-50%, -40%);
+    }
+
+    .tap-target-content {
+        top: 95px!important;
+        left: 40px!important;
+    }
+    
+    #demo-card {
+        height: 270px;
+    }
+    
+    #demo-card .card-image {
+        max-height: 70%!important;
     }
 }
 

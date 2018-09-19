@@ -87,9 +87,14 @@
 <!-- Tap Target Structure -->
 <div class="tap-target" data-target="menu">
   <div class="tap-target-content">
-    <a href="{{ url_for('demo') }}">
-      <h5 class="black-text">Demo Page</h5>
-    </a>
+    <div id="demo-card" class="card small">
+      <div class="card-image">
+        <a href="{{ url_for('demo') }}"><img src="{{ url_for('static', filename='img/demo-page.png') }}" /></a>
+      </div>
+      <div class="card-content">
+        <a href="{{ url_for('demo') }}" class="btn waves-effect waves-light update-btn">DEMO PAGE</a>
+      </div>
+    </div>
   </div>
 </div>
 {% endblock main %}
