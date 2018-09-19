@@ -83,4 +83,17 @@
       </div>
     </div> -->
 </div>
+<a id="menu" class="waves-effect waves-light btn btn-floating"><i class="material-icons">whatshot</i></a>
+<!-- Tap Target Structure -->
+<div class="tap-target" data-target="menu">
+  <div class="tap-target-content">
+    <a href="{{ url_for('demo') }}">
+      <h5 class="black-text">Demo Page</h5>
+    </a>
+  </div>
+</div>
 {% endblock main %}
+{% block scripts %}
+<!-- External JS -->
+<script src="{{ url_for('static', filename='js/login.js') }}"></script>
+{% endblock scripts %}

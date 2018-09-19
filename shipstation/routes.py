@@ -108,3 +108,8 @@ def on_hold():
     data = response.json()
 
     return jsonify(data)
+
+
+@app.route("/demo")
+def demo():
+    return render_template("demo.html")

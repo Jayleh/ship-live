@@ -5,6 +5,17 @@
     transform: translate(-50%, -50%);
 }
 
+#menu {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+}
+
+.tap-target {
+    background-color: wheat;
+    
+}
+
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) { 
     #user-input-card {
