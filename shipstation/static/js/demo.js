@@ -1,14 +1,15 @@
 // Time to stay on page for pagination
-let awaitingPageInterval = 15000,
-    holdPageInterval = 30000;
+let awaitingPageInterval = 7000,
+    holdPageInterval = 14000;
 
+    
 function getAwaiting() {
-    d3.json('/awaiting', (error, ordersData) => {
+    d3.json('/static/json/demo-data.json', (error, ordersData) => {
         if (error) throw error;
 
-        // console.log(ordersData);
-
-        let numAwaiting = ordersData.orders.length;
+        // Define awaiting orders and grab length
+        let awaitingOrders = ordersData[0].awaiting,
+            numAwaiting = awaitingOrders.orders.length;
 
         // Configure fill gauge
         let config = {
@@ -24,7 +25,7 @@ function getAwaiting() {
             // waveRiseAtStart: false,
             displayPercent: false,
             minValue: 1,
-            maxValue: 20
+            maxValue: 50
         }
 
         // Delete fill gauge if exists
@@ -45,7 +46,7 @@ function getAwaiting() {
             limitPerPage = 8;
 
         // Fill table with awaiting data
-        fillTable(ordersData, tableId);
+        fillTable(awaitingOrders, tableId);
 
         // Get page parameters
         let parameters = getParameters(tableId, limitPerPage),
@@ -71,15 +72,18 @@ function getAwaiting() {
 
 
 function getOnHold() {
-    d3.json('/on-hold', (error, ordersData) => {
+    d3.json('/static/json/demo-data.json', (error, ordersData) => {
         if (error) throw error;
+
+        // Define on hold orders
+        let onHoldOrders = ordersData[1].onHold;
 
         // Assign table id
         let tableId = '#on-hold-table',
             limitPerPage = 3;
 
         // Fill table with awaiting data
-        fillTable(ordersData, tableId);
+        fillTable(onHoldOrders, tableId);
 
         // Get page parameters
         let parameters = getParameters(tableId, limitPerPage),
@@ -112,16 +116,23 @@ function fillTable(ordersData, tableId) {
     let todayDate = new Date(),
         weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
-    // console.log(todayDate);
+    // Instantiate time difference
+    let timeDifference = 0;
 
     for (let i = 0, ii = ordersData.orders.length; i < ii; i++) {
-
         // Create variable for order each order
         let order = ordersData.orders[i];
 
+        // Keep track of time to subtract from date (hours)
+        timeDifference += 2.15;
+
         // Data fields for table
-        let orderDate = new Date(order.orderDate),
-            age = getAge(orderDate),
+        let orderDate = new Date();
+
+        // Subtract time difference
+        orderDate.setHours(orderDate.getHours() - timeDifference);
+
+        let age = getAge(orderDate),
             weekday = weekdays[orderDate.getDay()],
             month = orderDate.getMonth() + 1,
             date = orderDate.getDate(),
@@ -132,7 +143,7 @@ function fillTable(ordersData, tableId) {
             itemName,
             numProducts = 0;
 
-        // console.log(orderDate);
+        // console.log(age);
 
         for (let j = 0, jj = products.length; j < jj; j++) {
             if (products[j].name !== 'Total Discount') {
@@ -170,9 +181,6 @@ function fillTable(ordersData, tableId) {
     }
 }
 
-// Run getAwaiting and getOnHold on initial load
-getAwaiting();
-getOnHold();
 
 // Function for color scale based age
 function getColor(day, hour) {
@@ -181,6 +189,7 @@ function getColor(day, hour) {
             (day < 1 && hour >= 12) ? '#31a354' :
                 '#2c7fb8';
 }
+
 
 // Pagination function
 function getParameters(tableId, limitPerPage) {
@@ -194,10 +203,12 @@ function getParameters(tableId, limitPerPage) {
     return parameters;
 }
 
+
 function showPage(tableId, currentPage, limitPerPage) {
     $(`${tableId} tbody tr`).hide()
         .slice((currentPage - 1) * limitPerPage, currentPage * limitPerPage).show();
 }
+
 
 function paginate(tableId, numberOfPages, limitPerPage, pageInterval) {
     // Show initial page 1
@@ -214,12 +225,14 @@ function paginate(tableId, numberOfPages, limitPerPage, pageInterval) {
     }
 }
 
+
 function startPaginationInterval(tableId, numberOfPages, limitPerPage, pageInterval, resetInterval) {
     window.setInterval(function () {
         // console.log(numberOfPages)
         paginate(tableId, numberOfPages, limitPerPage, pageInterval);
     }, resetInterval);
 }
+
 
 document.addEventListener('DOMContentLoaded', function () {
     // Enable floating action button
@@ -231,12 +244,6 @@ document.addEventListener('DOMContentLoaded', function () {
     M.Tooltip.init($toolTip);
 });
 
-// Run getShipments every 10 minutes
-window.setInterval(function () {
-    getAwaiting();
-    getOnHold();
-}, 6e5);
-
 
 function generateMap() {
     d3.json('static/json/states.json', (error, statesData) => {
@@ -244,26 +251,20 @@ function generateMap() {
 
         // console.log(statesData);
 
-        // Get this year and month
-        let date = new Date()
-            .toISOString()
-            .slice(0, 7);
-
-        let dateQuery = `${date}-01 00:00:00`;
-
-        d3.json(`/shipped/${dateQuery}`, (error, shippedData) => {
+        d3.json('/static/json/demo-data.json', (error, ordersData) => {
             if (error) throw error;
 
-            // console.log(shippedData);
+            // Define shipped orders and grab length
+            let shippedData = ordersData[2].shipped,
+                numShipped = shippedData.orders.length;
+
+            console.log(shippedData);
 
             // List to hold markers
             let orderMarkers = [];
 
             // Creating a new marker cluster group
             let clusterMarkers = L.markerClusterGroup();
-
-            // Get shipped orders length
-            let numShipped = shippedData.orders.length;
 
             // Remove h1 if it exists
             d3.select('#total-order-number')
@@ -288,7 +289,7 @@ function generateMap() {
 
                 for (let j = 0, jj = statesData.length; j < jj; j++) {
 
-                    if (state === statesData[j].abbreviation) {
+                    if (state === statesData[j].state) {
 
                         let lat = statesData[j].latitude,
                             lon = statesData[j].longitude;
@@ -323,16 +324,12 @@ function generateMap() {
 }
 
 
-// Run generateMap on initial load
-generateMap();
-
-
 function createMap(orderLocations, clusterMarkers) {
     // Mapbox wordmark
     let mbAttr = 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
         '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
         'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>, ' +
-        'Click <a href="/map">here</a> for full map.',
+        'Click <a href="/demo-map">here</a> for full map.',
         mbKey = 'pk.eyJ1IjoiamF5bGVoIiwiYSI6ImNqaDFhaWo3MzAxNTQycXFtYzVraGJzMmQifQ.JbX9GR_RiSKxSwz9ZK4buw',
         mbUrl = `https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=${mbKey}`,
         mbStyleUrl = `https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/256/{z}/{x}/{y}?access_token=${mbKey}`;
@@ -384,8 +381,16 @@ function createMap(orderLocations, clusterMarkers) {
         .addTo(myMap);
 }
 
-// Run getShipments every 10 minutes
+
+// Run getAwaiting, getOnHold, generateMape on initial load
+getAwaiting();
+getOnHold();
+generateMap();
+
+
+// Refresh every 10 minutes
 window.setInterval(function () {
+    getAwaiting();
+    getOnHold();
     generateMap();
 }, 6e5);
-

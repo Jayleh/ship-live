@@ -62,8 +62,8 @@ def awaiting():
 
     base_url = "https://ssapi.shipstation.com"
 
-    query_url = "/orders?orderStatus=awaiting_shipment&page=1&pageSize=500"
-    # query_url = "/orders?orderStatus=shipped&page=1&pageSize=26"
+    # query_url = "/orders?orderStatus=awaiting_shipment&page=1&pageSize=500"
+    query_url = "/orders?orderStatus=shipped&page=1&pageSize=26"
 
     full_url = base_url + query_url
 
@@ -80,8 +80,8 @@ def shipped(date):
 
     base_url = "https://ssapi.shipstation.com"
 
-    query_url = f"/orders?orderStatus=shipped&orderDateStart={date}&page=1&pageSize=500"
-    # query_url = "/orders?orderStatus=shipped&page=1&pageSize=5"
+    # query_url = f"/orders?orderStatus=shipped&orderDateStart={date}&page=1&pageSize=500"
+    query_url = "/orders?orderStatus=shipped&page=1&pageSize=5"
 
     full_url = base_url + query_url
 
@@ -98,8 +98,8 @@ def on_hold():
 
     base_url = "https://ssapi.shipstation.com"
 
-    query_url = f"/orders?orderStatus=on_hold&page=1&pageSize=500"
-    # query_url = "/orders?orderStatus=shipped&page=1&pageSize=5"
+    # query_url = f"/orders?orderStatus=on_hold&page=1&pageSize=500"
+    query_url = "/orders?orderStatus=shipped&page=1&pageSize=5"
 
     full_url = base_url + query_url
 
@@ -113,3 +113,8 @@ def on_hold():
 @app.route("/demo")
 def demo():
     return render_template("demo.html")
+
+
+@app.route("/demo-map")
+def demo_map():
+    return render_template("demo-map.html")

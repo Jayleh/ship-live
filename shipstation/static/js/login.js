@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let $menu = document.querySelector('#menu'),
         instance = M.TapTarget.getInstance($tapTarget);
 
-    $menu.addEventListener("mouseover", function () {
+    $menu.addEventListener("click", function () {
         instance.open();
     });
 });
