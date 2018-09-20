@@ -58,17 +58,24 @@ td {
 
 /* Large devices (desktops, 993px and up) */
 @media (min-width: 993px) {
-    #map-card, #hold-card {
-        position: absolute;
-        bottom: 0%;
+    #fill-card,
+    #awaiting-card {
+        position: fixed;
+    }
+
+    #map-card,
+    #hold-card {
+        position: fixed;
+        bottom: 0;
     }
 
     #map {
         height: unset;
-        min-height: 335px;
+        min-height: 40vh;
     }
     
-    #hold-card {
+    #hold-card,
+    #awaiting-card {
         left: 50%;
     }
 
@@ -76,12 +83,23 @@ td {
         min-height: unset;
     }
 
+    #fill-card .card {
+        height: 40vh;
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+    }
+
     #awaiting-card .card-table {
-        min-height: 415px;
+        height: 57vh;
+    }
+
+    #map-card .card {
+        height: 45vh;
     }
 
     #hold-card .card-table {
-        min-height: 235px;
+        height: 28vh;
     }
 
     td, th {
