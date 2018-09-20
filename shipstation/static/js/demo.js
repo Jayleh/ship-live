@@ -258,7 +258,7 @@ function generateMap() {
             let shippedData = ordersData[2].shipped,
                 numShipped = shippedData.orders.length;
 
-            console.log(shippedData);
+            // console.log(shippedData);
 
             // List to hold markers
             let orderMarkers = [];
