@@ -84,22 +84,22 @@ td {
     }
 
     #fill-card .card {
-        height: 40vh;
+        height: 38vh;
         display: flex;
         justify-content: center;
         align-items: center; 
     }
 
     #awaiting-card .card-table {
-        height: 57vh;
+        height: 53vh;
     }
 
     #map-card .card {
-        height: 45vh;
+        height: 47vh;
     }
 
     #hold-card .card-table {
-        height: 28vh;
+        height: 32vh;
     }
 
     td, th {
