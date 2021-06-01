@@ -18,7 +18,7 @@ pycparser==2.18
 requests==2.18.4
 six==1.11.0
 SQLAlchemy==1.2.9
-urllib3==1.22
+urllib3==1.26.5
 Werkzeug==0.14.1
 wincertstore==0.2
 WTForms==2.2.1
